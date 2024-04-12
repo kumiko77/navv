@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Sarasa';
+  src: url('../assets/font/Sarasa.ttc');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Sarasa';
+}
