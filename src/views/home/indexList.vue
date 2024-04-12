@@ -1,8 +1,8 @@
 <template>
   <div grid="~ gap-4 cols-5" p-4>
     <div
-      v-for="i in 20"
-      :key="i"
+      v-for="item in mock"
+      :key="item.name"
       h="20"
       flex="~"
       transition-all
@@ -10,15 +10,15 @@
       cursor-pointer
     >
       <div h-full w-25 flex="~ items-center justify-center" bg="#f5f5fa">
-        <img max-w="50%" src="../../assets/images/card/base.png" />
+        <img max-w="50%" :src="item.image" />
       </div>
-      <div p-2>名称名称名称</div>
+      <div p-2>{{item.name}}</div>
     </div>
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import mock from '@/mock/card'
 </script>
 
 <style>
