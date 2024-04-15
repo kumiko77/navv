@@ -49,14 +49,13 @@
 </template>
 
 <script setup>
+import mock from '@/mock/card'
+
 const current = ref("全部");
-const menuList = ref([
-  { name: "AAAA", path: "/home/AAAA" },
-  { name: "BBBB", path: "/home/BBBB" },
-  { name: "CCCC", path: "/home/CCCC" },
-  { name: "DDDD", path: "/home/DDDD" },
-  { name: "EEEE", path: "/home/EEEE" },
-]);
+const menuList = ref([]);
+
+const emit = defineEmits(['change'])
+
 
 const itemClass = (isActive) => {
   return isActive
@@ -66,7 +65,28 @@ const itemClass = (isActive) => {
 
 const onMenuClick = name => {
   current.value = name;
+  emit('change', name)
 };
+
+const getUniqueValuesByKey = (arr, key) => {
+    const uniqueValues = new Set();
+    const result = [];
+
+    arr.forEach(obj => {
+        uniqueValues.add(obj[key]);
+    });
+
+    uniqueValues.forEach(value => {
+        result.push(value);
+    });
+
+    return result;
+}
+
+onMounted(() => {
+  menuList.value = getUniqueValuesByKey(mock, 'type').map(item => ({name: item}))
+});
+
 </script>
 
 <style>

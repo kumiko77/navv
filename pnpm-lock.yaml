@@ -14,6 +14,9 @@ dependencies:
   unplugin-auto-import:
     specifier: ^0.17.5
     version: 0.17.5
+  vite-plugin-oh-my-live2d:
+    specifier: ^0.16.1
+    version: 0.16.1
   vue:
     specifier: ^3.4.21
     version: 3.4.21
@@ -1402,6 +1405,10 @@ packages:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
     dev: true
 
+  /javascript-stringify@2.1.0:
+    resolution: {integrity: sha512-JVAfqNPTvNq3sB/VHQJAFxN/sPgKnsKrCwyRt15zwNCdrMMJDdcEOdubuy+DuJYYdm0ox1J4uzEuYKkN+9yhVg==}
+    dev: false
+
   /jiti@1.21.0:
     resolution: {integrity: sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==}
     hasBin: true
@@ -1535,6 +1542,10 @@ packages:
       node-fetch-native: 1.6.4
       ufo: 1.5.3
     dev: true
+
+  /oh-my-live2d@0.16.1:
+    resolution: {integrity: sha512-SPlQBe3cWNwNkm2gmfykpMez3AVGXheae/+sCwrvL8R9x0zNlbH1qMQtkFMt/CKGChA7bi8WOJRY4rwhc/4yRw==}
+    dev: false
 
   /onetime@5.1.2:
     resolution: {integrity: sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==}
@@ -1842,6 +1853,13 @@ packages:
       escalade: 3.1.2
       picocolors: 1.0.0
     dev: true
+
+  /vite-plugin-oh-my-live2d@0.16.1:
+    resolution: {integrity: sha512-muOOcmLrZkzlw5F4eT1jsB9usQo8MdD+fQy+wU1BO+OBC13S3T8Tff3uJeUsEcT1/ja3hLYc+b1evsdQ+i/IMA==}
+    dependencies:
+      javascript-stringify: 2.1.0
+      oh-my-live2d: 0.16.1
+    dev: false
 
   /vite@5.2.0:
     resolution: {integrity: sha512-xMSLJNEjNk/3DJRgWlPADDwaU9AgYRodDH2t6oENhJnIlmU9Hx1Q6VpjyXua/JdMw1WJRbnAgHJ9xgET9gnIAg==}
