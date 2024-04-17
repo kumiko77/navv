@@ -1,7 +1,7 @@
 <template>
   <div grid="~ gap-4 cols-5" py-4>
     <div
-      v-for="item in filterMock"
+      v-for="item in filterCardList"
       :key="item.name"
       h="20"
       flex="~"
@@ -19,28 +19,41 @@
 </template>
 
 <script setup>
-import mock from '@/mock/card'
 import { computed } from 'vue'
 
 const props = defineProps({
-  filterName: {
+  filterId: {
     type: String,
     default: null
   }
 })
 
-const filterMock = computed(() => {
-  if(props.filterName === '全部') {
-    return mock
+const filterCardList = computed(() => {
+  if(!props.filterId) {
+    return cardList.value
   }
-  if (props.filterName) {
-    return mock.filter(item => item.type === props.filterName)
+  if (props.filterId) {
+    return cardList.value.filter(item => item.categoryId === props.filterId)
   }
 })
 
 const onMenuClick = e => {
   window.open(e.url, '_blank')
 }
+
+import { getNavList } from '@/api/card'
+
+const cardList = ref([])
+
+const initCategory = () => {
+  getNavList().then(res => {
+    cardList.value = res.data
+  })
+}
+
+onMounted(() => {
+  initCategory()
+});
 </script>
 
 <style>

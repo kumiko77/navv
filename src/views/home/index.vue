@@ -5,7 +5,7 @@
     </div>
     <div flex-1 p="x-8">
       <div h-18 border="~ solid #e5e5f1 b-1 l-0 r-0 t-0"></div>
-      <indexList :filterName="currentMenu"/>
+      <indexList :filterId="current"/>
     </div>
   </div>
 </template>
@@ -14,10 +14,10 @@
 import indexMenu from './indexMenu.vue'
 import indexList from './indexList.vue'
 
-const currentMenu = ref(null)
+const current = ref(null)
 
-const onMenu = name => {
-  currentMenu.value = name
+const onMenu = id => {
+  current.value = id
 }
 </script>
 

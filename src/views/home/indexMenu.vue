@@ -13,9 +13,9 @@
           text="sm"
           font="bold"
           shadow="item hover:item-hover"
-          :class="itemClass(current === '全部')"
+          :class="itemClass(!current)"
           border="rounded"
-          @click="onMenuClick('全部')"
+          @click="onMenuClick()"
         >
           <div
             i-carbon-checkbox-indeterminate
@@ -37,8 +37,8 @@
           shadow="item hover:item-hover"
            v-for="item in menuList"
           :key="item.name"
-          :class="itemClass(current === item.name)"
-          @click="onMenuClick(item.name)"
+          :class="itemClass(current === item.id)"
+          @click="onMenuClick(item.id)"
         >
           <div i-carbon-home text="xl"/>
           <span m="l-3">{{ item.name }}</span>
@@ -49,9 +49,7 @@
 </template>
 
 <script setup>
-import mock from '@/mock/card'
-
-const current = ref("全部");
+const current = ref(null);
 const menuList = ref([]);
 
 const emit = defineEmits(['change'])
@@ -63,28 +61,21 @@ const itemClass = (isActive) => {
     : ["text-#5a5e9a"];
 };
 
-const onMenuClick = name => {
-  current.value = name;
-  emit('change', name)
+const onMenuClick = id => {
+  current.value = id;
+  emit('change', id)
 };
 
-const getUniqueValuesByKey = (arr, key) => {
-    const uniqueValues = new Set();
-    const result = [];
+import { getCategoryList } from '@/api/card'
 
-    arr.forEach(obj => {
-        uniqueValues.add(obj[key]);
-    });
-
-    uniqueValues.forEach(value => {
-        result.push(value);
-    });
-
-    return result;
+const initCategory = () => {
+  getCategoryList().then(res => {
+    menuList.value = res.data
+  })
 }
 
 onMounted(() => {
-  menuList.value = getUniqueValuesByKey(mock, 'type').map(item => ({name: item}))
+  initCategory()
 });
 
 </script>
