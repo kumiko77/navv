@@ -1,8 +1,20 @@
-import 'uno.css';
 import { createApp } from 'vue';
 import App from './App.vue';
-import router from './router';
 
+// 公用样式
 import './styles/main.css';
 
-createApp(App).use(router).mount('#app')
+// antd
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/reset.css';
+
+// router
+import router from './router';
+
+// unocss
+import 'uno.css';
+
+createApp(App)
+  .use(Antd)
+  .use(router)
+  .mount('#app')

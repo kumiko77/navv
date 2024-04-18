@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@iconify-json/carbon": "^1.1.31",
+    "ant-design-vue": "^4.1.2",
     "axios": "^1.6.8",
     "pinia": "^2.1.7",
     "unplugin-auto-import": "^0.17.5",
