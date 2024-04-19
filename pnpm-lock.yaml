@@ -17,6 +17,9 @@ dependencies:
   pinia:
     specifier: ^2.1.7
     version: 2.1.7(vue@3.4.21)
+  pinia-plugin-persistedstate:
+    specifier: ^3.2.1
+    version: registry.npmmirror.com/pinia-plugin-persistedstate@3.2.1(pinia@2.1.7)
   unplugin-auto-import:
     specifier: ^0.17.5
     version: 0.17.5
@@ -2307,6 +2310,17 @@ packages:
     name: picocolors
     version: 1.0.0
     dev: true
+
+  registry.npmmirror.com/pinia-plugin-persistedstate@3.2.1(pinia@2.1.7):
+    resolution: {integrity: sha512-MK++8LRUsGF7r45PjBFES82ISnPzyO6IZx3CH5vyPseFLZCk1g2kgx6l/nW8pEBKxxd4do0P6bJw+mUSZIEZUQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pinia-plugin-persistedstate/-/pinia-plugin-persistedstate-3.2.1.tgz}
+    id: registry.npmmirror.com/pinia-plugin-persistedstate/3.2.1
+    name: pinia-plugin-persistedstate
+    version: 3.2.1
+    peerDependencies:
+      pinia: ^2.0.0
+    dependencies:
+      pinia: 2.1.7(vue@3.4.21)
+    dev: false
 
   registry.npmmirror.com/postcss@8.4.38:
     resolution: {integrity: sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss/-/postcss-8.4.38.tgz}

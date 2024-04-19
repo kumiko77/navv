@@ -9,12 +9,27 @@ import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/reset.css';
 
 // router
-import router from './router';
+import { setupRouter } from './router';
 
 // unocss
 import 'uno.css';
 
-createApp(App)
-  .use(Antd)
-  .use(router)
-  .mount('#app')
+// guard
+import './guard';
+
+// pinia
+import { setupStore } from '@/store';
+
+const setupAll = () => {
+  const app = createApp(App)
+
+  app.use(Antd)
+
+  setupRouter(app)
+
+  setupStore(app)
+
+  app.mount('#app')
+}
+
+setupAll()

@@ -1,21 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
-
-const routes = [
-  {
-    path: '/nav',
-    name: 'nav',
-    component: () => import('@/views/nav/index.vue')
-  },
-  {
-    path: '/',
-    name: 'data',
-    component: () => import('@/views/layout/base.vue')
-  }
-];
+import { mergeRoute } from './route';
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes: mergeRoute
 });
 
-export default router;
+const setupRouter = app => {
+  app.use(router)
+}
+
+export { setupRouter };
+
+export default router
