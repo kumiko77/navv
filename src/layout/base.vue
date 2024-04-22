@@ -5,7 +5,7 @@
       <div w-90 h-full bg-pink-300 shrink="0">
         <sideMenu />
       </div>
-      <div flex="1" h-full overflow-auto bg-blue>
+      <div flex="1" h-full overflow-auto bg-blue p-1.5>
         <router-view />
       </div>
     </div>
