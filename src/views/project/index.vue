@@ -13,10 +13,10 @@
               <div text="base #171717" ml-2 font="bold">{{ cItem.name }}</div>
             </div>
             <div flex="~" mt-4 space="x-2" transition-all>
-              <div rounded p-1 text="#fff" bg="#81DAD0 hover:#32c5b5">TEST</div>
-              <div rounded p-1 text="#fff" bg="#FFD6D6 hover:#db7676">PROD</div>
-              <div rounded p-1 text="#fff" bg="#abb2bd hover:#596475">UI</div>
-              <div rounded p-1 text="#fff" bg="#A8BFF0 hover:#4162a9">DOC</div>
+              <div v-if="cItem.test" rounded p-1 text="#fff" bg="#81DAD0 hover:#32c5b5" @click="onTagClick(cItem, 'test')">TEST</div>
+              <div v-if="cItem.prod" rounded p-1 text="#fff" bg="#FFD6D6 hover:#db7676" @click="onTagClick(cItem, 'prod')">PROD</div>
+              <div v-if="cItem.ui" rounded p-1 text="#fff" bg="#abb2bd hover:#596475" @click="onTagClick(cItem, 'ui')">UI</div>
+              <div v-if="cItem.doc" rounded p-1 text="#fff" bg="#A8BFF0 hover:#4162a9" @click="onTagClick(cItem, 'doc')">DOC</div>
             </div>
           </div>
         </div>
@@ -37,6 +37,10 @@ const getNav = async () => {
   if (!err) {
     projectNavList.value = res.data
   }
+}
+
+const onTagClick = (el, type) {
+  window.open(el[type], '_blank')
 }
 
 const getRandomColor = () => {
