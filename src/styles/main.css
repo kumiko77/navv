@@ -1,11 +1,15 @@
-/* @font-face {
-  font-family: 'Sarasa';
-  src: url('https://kami77.oss-cn-shanghai.aliyuncs.com/font/Sarasa.ttc');
-} */
+ @font-face {
+  font-family: 'almm';
+  src: url('https://navv-resource.kami77.cn/alimama.ttf');
+} 
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: 'Sarasa'; */
+  font-family: 'almm';
+}
+
+html, body {
+  background-color: #fafafa;
 }

@@ -1,6 +1,7 @@
 import axios from 'axios'
+import { useUserStoreWithOut } from '@/store/modules/user'
 
-const baseURL = 'http://47.116.216.13:8080/'
+const baseURL = 'http://localhost:8080/'
 
 const request = axios.create({
   baseURL: baseURL,
@@ -9,11 +10,20 @@ const request = axios.create({
 
 // 异常拦截处理器
 const errorHandler = (error) => {
+  const { data } = error.response
+  if(data.status === 403) {
+    message.error('授权失败')
+  }
   return Promise.reject(error)
 }
 
 // request interceptor
 request.interceptors.request.use(config => {
+  const userStore = useUserStoreWithOut()
+  const token = userStore.getToken
+  if(token) {
+    config.headers['Authorization'] = token
+  }
   return config
 }, errorHandler)
 

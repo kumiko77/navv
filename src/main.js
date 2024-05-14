@@ -15,10 +15,13 @@ import { setupRouter } from './router';
 import 'uno.css';
 
 // guard
-import './guard';
+import './permission';
 
 // pinia
 import { setupStore } from '@/store';
+
+import {install} from '@icon-park/vue-next/es/all';
+import '@icon-park/vue-next/styles/index.css';
 
 const setupAll = () => {
   const app = createApp(App)
@@ -28,6 +31,8 @@ const setupAll = () => {
   setupRouter(app)
 
   setupStore(app)
+
+  install(app);
 
   app.mount('#app')
 }

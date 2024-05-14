@@ -10,32 +10,35 @@ export default defineConfig({
     vue(), 
     UnoCSS(), 
     AutoImport({
-      imports: ['vue'],
+      imports: ['vue',
+        {
+          'await-to-js': [
+            ['to']
+          ]
+        },
+        {
+          'ant-design-vue': [
+            ['message']
+          ]
+        },
+        {
+          'vue-router': [
+            ['useRouter']
+          ]
+        }
+      ],
       eslintrc: {
         enabled: true
       }
-    }),
-    // oml2d({
-    //   models: [
-    //     // {
-    //     //   "path": "https://model.oml2d.com/HK416-1-normal/model.json",
-    //     //   "position": [0, 60],
-    //     //   "scale": 0.08,
-    //     //   "stageStyle": {
-    //     //     "height": 450
-    //     //   }
-    //     // }
-    //   ],
-
-    //   tips: {
-    //     idleTips: {
-    //       wordTheDay: (wordTheDayData) => {
-    //         return wordTheDayData.hitokoto;
-    //       }
-    //     }
-    //   }
-    // })
+    })
   ],
+  css: {
+    preprocessorOptions: {
+      less: {
+        javascriptEnabled: true,
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': path.join(__dirname, 'src')
