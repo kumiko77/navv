@@ -1,7 +1,7 @@
-import axios from 'axios'
 import { useUserStoreWithOut } from '@/store/modules/user'
+import axios from 'axios'
 
-const baseURL = 'http://localhost:8080/'
+const baseURL = 'https://www.kami77.cn/navv-api/'
 
 const request = axios.create({
   baseURL: baseURL,
