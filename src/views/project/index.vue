@@ -39,7 +39,7 @@ const getNav = async () => {
   }
 }
 
-const onTagClick = (el, type) {
+const onTagClick = (el, type) => {
   window.open(el[type], '_blank')
 }
 
