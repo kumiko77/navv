@@ -5,6 +5,9 @@
       <headerAvatar />
     </div>
     <div mt-6 mx-auto w="400">
+      <div mb-6>
+        <inputPro />
+      </div>
       <router-view />  
     </div>
   </div>
@@ -12,5 +15,6 @@
 
 <script setup>
 import sideMenu from "@/components/routeHeader.vue";
+import inputPro from "@/components/inputPro.vue";
 import headerAvatar from "@/components/headerAvatar.vue";
 </script>

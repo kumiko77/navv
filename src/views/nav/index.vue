@@ -1,6 +1,6 @@
 <template>
   <div class="nav-index" flex="~">
-    <div w-50 px-2 border="~ solid l-0 t-0 b-0 #ebebeb">
+    <div w-50 pr-2 border="~ solid l-0 t-0 b-0 #ebebeb">
       <div space="y-2">
         <div flex="~" rounded text="sm #666 hover:#000" p-2 cursor-pointer :class="{ selected: menuSelected === '全部' }"
           @click="onCategoryClick('全部')">
