@@ -1,10 +1,9 @@
 import router from '@/router'
 import { useUserStoreWithOut } from '@/store/modules/user'
 
-const whiteList = ['baseNav', 'login']
+const whiteList = ['login']
 
 router.beforeEach(async (to, from, next) => {
-  console.log(to.path)
   const userStore = useUserStoreWithOut()
   if (userStore.getToken) {
     if (to.path === '/login') {
