@@ -1,5 +1,5 @@
-import axios from 'axios'
 import { useUserStoreWithOut } from '@/store/modules/user'
+import axios from 'axios'
 
 const baseURL = 'https://www.kami77.cn/navv-api/'
 
@@ -10,6 +10,7 @@ const request = axios.create({
 
 // 异常拦截处理器
 const errorHandler = (error) => {
+  console.log(error)
   const { data } = error.response
   if(data.status !== 200) {
     message.error('授权失败')
