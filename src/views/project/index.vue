@@ -14,7 +14,7 @@
             </div>
             <div flex="~" mt-4 space="x-2" transition-all>
               <div v-if="cItem.test" rounded p-1 text="#fff" bg="#81DAD0 hover:#32c5b5" @click="onTagClick(cItem, 'test')">TEST</div>
-              <div v-if="cItem.prod" rounded p-1 text="#fff" bg="#FFD6D6 hover:#db7676" @click="onTagClick(cItem, 'prod')">PROD</div>
+              <div v-if="cItem.pro" rounded p-1 text="#fff" bg="#FFD6D6 hover:#db7676" @click="onTagClick(cItem, 'pro')">PROD</div>
               <div v-if="cItem.ui" rounded p-1 text="#fff" bg="#abb2bd hover:#596475" @click="onTagClick(cItem, 'ui')">UI</div>
               <div v-if="cItem.doc" rounded p-1 text="#fff" bg="#A8BFF0 hover:#4162a9" @click="onTagClick(cItem, 'doc')">DOC</div>
             </div>

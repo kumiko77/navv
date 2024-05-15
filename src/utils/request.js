@@ -10,6 +10,7 @@ const request = axios.create({
 
 // 异常拦截处理器
 const errorHandler = (error) => {
+  console.log(error)
   const { data } = error.response
   if(data.status === 403) {
     message.error('授权失败')

@@ -17,7 +17,7 @@
         </div>
       </a>
       <template #overlay>
-        <a-menu>
+        <a-menu v-if="userStore.getToken">
           <a-menu-item>
             <a href="javascript:;" @click="onLogout">退出登录</a>
           </a-menu-item>
