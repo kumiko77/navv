@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useUserStoreWithOut } from '@/store/modules/user'
 
-const baseURL = 'http://localhost:8080/'
+const baseURL = 'https://www.kami77.cn/navv-api/'
 
 const request = axios.create({
   baseURL: baseURL,
@@ -11,7 +11,7 @@ const request = axios.create({
 // 异常拦截处理器
 const errorHandler = (error) => {
   const { data } = error.response
-  if(data.status === 403) {
+  if(data.status !== 200) {
     message.error('授权失败')
   }
   return Promise.reject(error)
