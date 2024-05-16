@@ -1,4 +1,5 @@
 import { useUserStoreWithOut } from '@/store/modules/user'
+import { message } from 'ant-design-vue'
 import axios from 'axios'
 
 const baseURL = 'https://www.kami77.cn/navv-api/'
@@ -10,7 +11,6 @@ const request = axios.create({
 
 // 异常拦截处理器
 const errorHandler = (error) => {
-  console.log(error)
   const { data } = error.response
   if(data.status === 403) {
     message.error('授权失败')
@@ -30,6 +30,11 @@ request.interceptors.request.use(config => {
 
 // response interceptor
 request.interceptors.response.use((response) => {
+  if(response.data.code === 401) {
+    const userStore = useUserStoreWithOut()
+    message.warning(response.data.message)
+    userStore.logout('')
+  }
   return response.data
 }, errorHandler)
 

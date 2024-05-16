@@ -5,6 +5,9 @@
       <headerAvatar />
     </div>
     <div mt-6 mx-auto w="400">
+      <div>
+        <baseNavLine />
+      </div>
       <div mb-6>
         <inputPro />
       </div>
@@ -15,6 +18,8 @@
 
 <script setup>
 import sideMenu from "@/components/routeHeader.vue";
+import headerExtra from "@/components/headerExtra.vue";
 import inputPro from "@/components/inputPro.vue";
+import baseNavLine from "./modules/baseNavLine.vue";
 import headerAvatar from "@/components/headerAvatar.vue";
 </script>
