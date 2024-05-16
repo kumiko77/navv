@@ -12,7 +12,7 @@ const request = axios.create({
 // 异常拦截处理器
 const errorHandler = (error) => {
   const { data } = error.response
-  if(data.status === 403) {
+  if(data.status !== 200) {
     message.error('授权失败')
   }
   return Promise.reject(error)
