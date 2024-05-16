@@ -2,10 +2,13 @@
   <div flex="~ items-center" space-x-4>
     <div v-if="userStore.getToken" flex="~ items-center" space-x-4>
       <div @click="onItemClick(jenkinsUrl)">
-        <img h-12 w-7 cursor-pointer src="https://navv-resource.kami77.cn/jenkinsImage.png">
+        <img h-10 w-10 cursor-pointer src="https://navv-resource.kami77.cn/jenkinsImage.png">
       </div>
       <div @click="onItemClick(zentaoUrl)">
         <img h-10 w-10 cursor-pointer src="https://navv-resource.kami77.cn/zentao.png">
+      </div>
+      <div @click="onItemClick(gitlabUrl)">
+        <img h-10 w-10 cursor-pointer src="https://navv-resource.kami77.cn/gitlab.png">
       </div>
     </div>
     <div flex="1">
@@ -46,6 +49,7 @@ const searchTypeOption = [
 ];
 const jenkinsUrl = 'http://211.161.195.73:30200/'
 const zentaoUrl = 'zentao.awsagroup.com:5657'
+const gitlabUrl = 'http://211.161.195.73:30280/dashboard/projects'
 const searchType = ref("百度");
 const serachText = ref("");
 
